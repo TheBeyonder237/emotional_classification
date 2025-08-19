@@ -127,7 +127,7 @@ st.title("🎭 Détecteur d'Émotions en Temps Réel")
 def load_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = EmotionCNN().to(device)
-    model.load_state_dict(torch.load("modele/cnn_emotion_model.pth", map_location=device))
+    model.load_state_dict(torch.load("cnn_emotion_model.pth", map_location=device))
     model.eval()
     return model, device
 
@@ -232,3 +232,4 @@ if start_button:
 
 else:
     st.info("👆 Cliquez sur le bouton pour démarrer la détection d'émotions.")
+
